@@ -3,17 +3,17 @@ function getRandom(a){
 };
 
 let chosenNumber = parseInt(getRandom(101));
-let userTries = 1;
+let userTries = 0;
 let userLimit = 10;
 
-while (userTries < userLimit){
+while (userTries <= userLimit){
 	let userGuess = parseInt(prompt("Input your guess from 1 to 100: "));
 	if (userGuess < chosenNumber) {
 		alert("Too low, try again. You used " + userTries + " of your " + userLimit + " tries.");
-		userTries--;
+		userTries++;
 	} else if (userGuess > chosenNumber) {
 		alert("Too High, try again. You used " + userTries + " of your " + userLimit + " tries.");
-		userTries--;
+		userTries++;
 	}	else {
 		alert("Correct Answer! You guessed the number in " + userTries + " tries!");
 		break;
